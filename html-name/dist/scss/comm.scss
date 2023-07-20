@@ -1,0 +1,176 @@
+// comm.css - 공통요소 : 헤더, 풋터, 버튼, 아이콘, 박스
+@charset "UTF-8";
+@import "variables", "mixin", "fonts", "reset", "main", "contents";
+
+// id 값은 #, class 값은 . 으로 지정 / 가장 큰 단위는 그냥 이름 적으면 됨
+// 공통
+.container {
+  padding: 0 $bothMargin;
+}
+.bg-gray {
+  background: $gray-e;
+}
+
+// head
+#header {
+  border-bottom: 1px solid $b;
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+  }
+  .head_right {
+    display: flex;
+  }
+  .lst-util {
+    display: flex;
+    li {
+      display: flex;
+    }
+    .btn-g,
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 70px;
+      .material-icons-outlined {
+        font-size: 26px;
+      }
+      &::before {
+        font-size: 20px;
+        font-family: "Font Awesome 6 Free";
+      }
+    }
+    // .btn-search::before {
+    //   content: "\f002";
+    //   font-weight: 900;
+    // }
+    // .btn-mypage::before {
+    //   content: "\f007";
+    //   font-weight: 400;
+    // }
+  }
+}
+
+.gnb-wrap {
+  // a {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   width: 40px;
+  //   height: 70px;
+  // }
+  .input-burger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  .label-burger {
+    .bar {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: red;
+    }
+  }
+  #gnb {
+    display: none;
+  }
+}
+
+// main
+.section-g {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  .section-tit {
+    font-size: 20px;
+    color: $b;
+  }
+  .section-contents {
+    margin-top: 20px;
+  }
+}
+
+.section-news {
+  .a {
+  }
+  .b {
+  }
+}
+.section-shopping {
+  .lst-shopping {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    li {
+      width: calc(50% - $spacingList / 2);
+      margin-bottom: $spacingList;
+      .thumb-shopping {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 200px;
+        border-radius: 4px;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: inherit;
+          border: 1px solid rgba($b, 0.06);
+          background: rgba($b, 0.03);
+          transform: translateZ(0);
+        }
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 0 50%;
+        transition: transform 0.3s;
+        // hover 하기 전에 트랜지션 넣어야 함
+      }
+    }
+    a {
+      &:hover {
+        img {
+          transform: scale(1.5);
+        }
+      }
+    }
+    .txt-shopping {
+      margin-bottom: 10px;
+      .txt-shopping__tit {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: $titDefult;
+      }
+      .txt-shopping__desc {
+        font-size: 12px;
+      }
+    }
+  }
+}
+.section-feed {
+  .a {
+  }
+  .b {
+  }
+}
+
+// footer
+#footer {
+  // 풋터는 컨테이너 밖에 있으므로, (컨테이너는 전체 4% 마진값 줌) 풋터 괄호에 보더값이 있으면 4% 영향 x 단 컨테이너 이하 영역에서는 4% 값이 적용됨
+  margin-bottom: 200px;
+  border-top: 10px solid #000;
+  .inner {
+  }
+}
