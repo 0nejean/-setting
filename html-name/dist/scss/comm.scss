@@ -14,9 +14,13 @@
 
 // head
 #header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
-  border-bottom: 1px solid $b;
+  background: white;
+  border: 1px solid #000;
   .inner {
     display: flex;
     align-items: center;
@@ -107,6 +111,7 @@
     flex-direction: column;
     width: 40px;
     height: $headerHeight;
+    cursor: pointer;
     .bar {
       display: block;
       width: 26px;
@@ -133,6 +138,84 @@
     justify-content: center;
     align-items: center;
     transition: right 0.3s;
+  }
+}
+
+// slide
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  position: relative;
+  height: 100vh;
+  text-align: center;
+  font-size: 18px;
+  background: lightcoral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide__txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 50%;
+  strong {
+    color: $w;
+    font-size: 30px;
+  }
+  p {
+    margin: 20px 0;
+    color: $w;
+    font-size: 14px;
+    opacity: 0.7;
+  }
+  a {
+    display: inline-block;
+    height: 30px;
+    margin-top: 10px;
+    padding: 0px 20px;
+    color: $w;
+    font-size: 14px;
+    border: 1px solid rgba($color: $w, $alpha: 0.5);
+    border-radius: 30px;
+    line-height: 30px;
   }
 }
 
