@@ -149,7 +149,7 @@ body {
 }
 
 body {
-  background: #eee;
+  background: white;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #000;
@@ -157,6 +157,7 @@ body {
   padding: 0;
 }
 
+// slide
 .swiper {
   width: 100%;
   height: 100%;
@@ -170,16 +171,16 @@ body {
   background: lightcoral;
   display: flex;
   justify-content: center;
-  align-items: center;
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-  }
+}
+
+.swiper-slide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .swiper-slide img {
@@ -187,36 +188,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.swiper-slide__txt {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  width: 50%;
-  strong {
-    color: $w;
-    font-size: 2.1429rem;
-  }
-  p {
-    margin: 20px 0;
-    color: $w;
-    font-size: 1rem;
-    opacity: 0.7;
-  }
-  a {
-    display: inline-block;
-    height: 30px;
-    margin-top: 10px;
-    padding: 0px 20px;
-    color: $w;
-    font-size: 1rem;
-    border: 1px solid rgba($color: $w, $alpha: 0.5);
-    border-radius: 30px;
-    line-height: 30px;
-  }
 }
 
 // main
@@ -234,98 +205,7 @@ body {
     margin-top: 20px;
   }
 }
-.list-event {
-  li {
-    margin-bottom: 50px;
-  }
-  img {
-    display: block;
-    width: 100%;
-    height: 300px;
-    margin-bottom: 20px;
-    object-fit: cover;
-  }
-  p {
-    font-size: 1.1429rem;
-    text-align: center;
-  }
-}
 
-.section-shopping {
-  .lst-shopping {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    li {
-      width: calc(50% - $spacingList / 2);
-      margin-bottom: $spacingList;
-      .thumb-shopping {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        // height: 200px;
-        border-radius: 4px;
-        &::before {
-          content: "";
-          display: block;
-          height: 0;
-          padding-top: 100%;
-        }
-        img {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: 0 50%;
-          transition: transform 0.3s;
-        }
-        &::after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          border-radius: inherit;
-          border: 1px solid rgba($b, 0.06);
-          background: rgba($b, 0.03);
-          transform: translateZ(0);
-        }
-      }
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: 0 50%;
-        transition: transform 0.3s;
-        // hover 하기 전에 트랜지션 넣어야 함
-      }
-    }
-    a {
-      &:hover {
-        img {
-          transform: scale(1.5);
-        }
-      }
-    }
-    .txt-shopping {
-      margin-bottom: 10px;
-      .txt-shopping__tit {
-        display: block;
-        margin: 10px 0px 10px;
-        font-size: 1rem;
-        color: $titDefult;
-      }
-      .txt-shopping__desc {
-        font-size: 0.8571rem;
-      }
-    }
-  }
-}
 .section-feed {
   background: white;
   .abc {
