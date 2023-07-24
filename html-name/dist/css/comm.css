@@ -279,6 +279,9 @@ legend {
   content: "";
 }
 
+.slide-intro {
+  transform: translateY(-70px);
+}
 .slide-intro .swiper-slide__txt {
   position: absolute;
   top: 50%;
@@ -402,6 +405,10 @@ legend {
   height: 300px;
 }
 
+.wrap {
+  padding-top: 70px;
+}
+
 .container {
   padding: 0 4%;
 }
@@ -417,7 +424,7 @@ legend {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: white;
+  background: rgba(255, 255, 255, 0.5);
   border: 1px solid #000;
 }
 #header .inner {
