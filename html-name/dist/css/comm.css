@@ -585,6 +585,16 @@ body {
   font-size: 0.8571rem;
 }
 
+.section-feed {
+  background: white;
+}
+.section-feed .abc {
+  color: #000;
+}
+.section-feed .section-contents {
+  color: #000;
+}
+
 #footer {
   margin-bottom: 200px;
   border-top: 10px solid #000;
